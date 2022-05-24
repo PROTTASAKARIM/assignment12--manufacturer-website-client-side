@@ -12,16 +12,16 @@ const Navbar = () => {
     }
 
     return (
-        <div class="navbar bg-base-300 bg-neutral text-neutral-content">
-            <div class="flex-1 mx-5">
+        <div className="navbar bg-base-300 bg-neutral text-neutral-content">
+            <div className="flex-1 mx-5">
 
                 <Link className='normal-case text-xl mx-5' to="/">SpareParts.com</Link>
                 <Link className='normal-case text-xl' to="/blogs">Blogs</Link>
-                {/* <a class="btn btn-ghost normal-case text-xl">Blogs</a> */}
+                {/* <a className="btn btn-ghost normal-case text-xl">Blogs</a> */}
 
             </div>
-            <div class="flex-none mx-5">
-                <ul class="menu menu-horizontal p-0">
+            <div className="flex-none mx-5">
+                <ul className="menu menu-horizontal p-0">
                     <li><a>Item 1</a></li>
                     <li><a>Item 2</a></li>
                     <li>
