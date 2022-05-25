@@ -29,30 +29,6 @@ const Navbar = () => {
 
 
     return (
-        // <div className="navbar bg-base-300 bg-neutral text-neutral-content">
-        //     <div className="flex-1 mx-5">
-
-        //         <Link className='normal-case text-xl mx-5' to="/">SpareParts.com</Link>
-        //         <Link className='normal-case text-xl' to="/blogs">Blogs</Link>
-        //         {/* <a className="btn btn-ghost normal-case text-xl">Blogs</a> */}
-
-        //     </div>
-        //     <div className="flex-none mx-5">
-        //         <ul className="menu menu-horizontal p-0">
-        //             <li><Link to="/dashboard">DashBoard</Link></li>
-
-
-        //             {user ? <>
-        //                 <li className='items-center'>{user.displayName}  <button className="btn btn-ghost" onClick={logout}>Sign Out</button></li>
-
-        //             </>
-
-        //                 : <li><Link to="/login">LOG IN</Link></li>
-        //             }
-
-        //         </ul>
-        //     </div>
-        // </div>
 
         <div className="navbar bg-base-100 bg-neutral text-neutral-content">
             <div className="navbar-start">

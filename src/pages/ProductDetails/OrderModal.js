@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const OrderModal = ({ product, productQty, refetch }) => {
     const { _id, name, minimumOrder, availableQuantity, price } = product;
 
     const [user, loading] = useAuthState(auth);
+    const [msg, Setmsg] = useState('')
 
     // const order = {
     //     productId: _id,
@@ -31,7 +32,6 @@ const OrderModal = ({ product, productQty, refetch }) => {
             phonrNo: phnNo,
             Address: address
         }
-        console.log(order)
         if (productQty < minimumOrder && productQty > availableQuantity) {
             alert('please order more then ' + minimumOrder + 'less then ' + availableQuantity)
         }
@@ -49,13 +49,15 @@ const OrderModal = ({ product, productQty, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    toast(`Your Oder has been placed`)
+                    Setmsg(`Your Oder has been placed`)
                 }
                 else {
-                    toast.error(`Your Order is declined`)
+                    Setmsg(`You have already ordered this product`)
                 }
                 refetch()
+                console.log(data)
             });
+
     }
 
     return (
@@ -84,12 +86,14 @@ const OrderModal = ({ product, productQty, refetch }) => {
 
                         <input type="submit" value="Submit" className="btn btn-secondary w-full max-w-xs mt-2" />
                     </form>
+                    <p className='text-violet-500'>{msg}</p>
                     <div class="modal-action">
                         <label for="order-modal" class="btn">Close Order</label>
                     </div>
 
                 </div>
             </div>
+
         </div>
     );
 };
