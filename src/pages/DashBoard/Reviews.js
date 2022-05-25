@@ -55,7 +55,6 @@ const Reviews = () => {
                         <label htmlFor="ratings">Ratings: </label>
 
                         <select className="input input-bordered w-full max-w-xs" {...register("ratings")}>
-                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -66,7 +65,7 @@ const Reviews = () => {
                         <label htmlFor="descreption"> Description :</label>
                         <input className="input input-bordered w-full max-w-xs m-2 h-32 p-4" {...register("descreption")} />
                         <br />
-                        <p>{msg}</p>
+                        <p className='m-2'>{msg}</p>
                         <input class="btn btn-primary" type="submit" />
                     </form>
                 </div>
