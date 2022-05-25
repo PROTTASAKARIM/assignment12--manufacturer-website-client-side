@@ -25,6 +25,9 @@ const Login = () => {
     if (error || gError) {
         loginError = <p className='text-red-500'>{error?.message || gError?.message}</p>
     }
+    if (user || gUser) {
+        navigate(from, { replace: true });
+    }
 
     const onSubmit = data => {
         console.log(data.email, data.password)

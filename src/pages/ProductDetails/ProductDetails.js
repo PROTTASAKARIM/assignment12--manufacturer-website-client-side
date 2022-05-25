@@ -1,20 +1,26 @@
 import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers';
 import { queryAllByAttribute } from '@testing-library/react';
 import React, { useEffect, useRef, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import auth from '../../firebase.init';
 import Errormsg from '../Shared/Errormsg';
 import Loading from '../Shared/Loading';
+import OrderModal from './OrderModal';
 
 const ProductDetails = () => {
     const { id } = useParams();
     const orderQty = useRef();
+    const user = useAuthState(auth);
 
 
     const [productDetails, setProductDetails] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
     let [productQty, setProductQty] = useState(0);
     let [productPrice, setProductPrice] = useState(0);
+
 
     const url = `http://localhost:5000/products/${id}`;
 
@@ -25,7 +31,7 @@ const ProductDetails = () => {
     //         .then(data => setProductDetails(data))
     // }, [id])
 
-    const { data: product, isLoading } = useQuery(['products'], () => fetch(url)
+    const { data: product, isLoading, refetch } = useQuery(['products'], () => fetch(url)
         .then(res => res.json()));
 
 
@@ -35,7 +41,7 @@ const ProductDetails = () => {
         return <Loading></Loading>
     }
 
-    console.log(product)
+    // console.log(product)
 
 
     // const productPrice = parseInt(product[0].price);
@@ -56,15 +62,27 @@ const ProductDetails = () => {
             setProductPrice(totalPrice)
         }
         else {
+
         }
-        console.log(productQty)
+        // console.log(productQty)
     }
 
     const handleOrder = () => {
         if (productQty < product[0].minimumOrder) {
             alert('please order at least ' + product[0].minimumOrder)
+            setOpenModal(false)
         }
+        else if (productQty > product[0].availableQuantity) {
+            alert('please order less then ' + product[0].availableQuantity)
+            setOpenModal(false)
+        }
+        else {
+            setOpenModal(true)
+        }
+
     }
+
+
 
     return (
         <div className='m-5 flex justify-center items-center'>
@@ -87,7 +105,17 @@ const ProductDetails = () => {
                         <p>Total Price : {productPrice}</p>
                     </div>
                 </div>
-                <button onClick={() => { handleOrder() }} className='btn'>Order Now</button>
+                <label onClick={() => { handleOrder() }} for="order-modal" class="btn modal-button">Order Now</label>
+                {
+                    openModal && <OrderModal
+                        id={product[0]._id}
+                        product={product[0]}
+                        productQty={productQty}
+                        refetch={refetch}
+
+                    ></OrderModal>
+                }
+                {/* <button  className='btn'>Order Now</button> */}
             </div>
 
         </div>
