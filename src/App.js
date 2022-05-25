@@ -6,9 +6,12 @@ import Login from './pages/Login/Login';
 import Blogs from './pages/Blogs/Blogs';
 import SignUp from './pages/Login/SignUp';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
-import { ToastContainer } from 'react-toastify';
 import RequireAuth from './pages/Login/RequireAuth';
 import DashBoard from './pages/DashBoard/DashBoard';
+import AllProducts from './pages/Home/AllProducts';
+import Myitems from './pages/DashBoard/Myitems';
+import Reviews from './pages/DashBoard/Reviews';
+import MyProfile from './pages/DashBoard/MyProfile';
 
 function App() {
   return (
@@ -22,16 +25,21 @@ function App() {
             <ProductDetails></ProductDetails>
           </RequireAuth>
         }></Route>
-        <Route path='/dashboard' element={
-          <RequireAuth>
-            <DashBoard></DashBoard>
-          </RequireAuth>
-        }></Route>
+
+        <Route path='/dashboard' element={<RequireAuth><DashBoard></DashBoard></RequireAuth>}>
+
+          <Route index element={<Myitems></Myitems>}></Route>
+          <Route path="/dashboard/reviews" element={<Reviews></Reviews>}></Route>
+          <Route path="/dashboard/myprofile" element={<MyProfile></MyProfile>}></Route>
+
+        </Route>
+
+        <Route path='/allproducts' element={<AllProducts></AllProducts>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
       </Routes>
-      <ToastContainer></ToastContainer>
+
     </div>
   );
 }

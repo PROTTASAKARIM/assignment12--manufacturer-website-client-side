@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const OrderModal = ({ product, productQty, refetch }) => {
@@ -48,6 +47,8 @@ const OrderModal = ({ product, productQty, refetch }) => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data.success)
+
                 if (data.success) {
                     Setmsg(`Your Oder has been placed`)
                 }

@@ -26,6 +26,9 @@ const SignUp = () => {
     if (gLoading || loading || updating) {
         return <Loading></Loading>
     }
+    if (gUser || user) {
+        navigate('/')
+    }
 
     let signError;
     if (gError || error || updateError) {
