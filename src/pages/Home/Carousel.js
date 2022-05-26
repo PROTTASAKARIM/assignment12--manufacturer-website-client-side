@@ -1,18 +1,27 @@
 import React from 'react';
-import banner from '../../images/12V-100A-Car-Parts-Alternator-for-Chrysler-300c-2004-OEM-27060-28300-.jpg'
+import { Link } from 'react-router-dom';
+import banner from '../../images/carBaner.jpg'
 
 const Carousel = () => {
     return (
-        <div className="hero">
-            <div className="hero-content flex-col lg:flex-row">
-                <img src={banner} className="max-w-sm rounded-lg shadow-2xl" />
+
+        <div class="hero min-h-screen bg-base-500">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <img src={banner} class="max-w-sm rounded-lg shadow-2xl" />
                 <div>
-                    <h1 className="text-5xl font-bold">Every products you need</h1>
-                    <h1 className="text-3xl mt-2 font-bold">We will provide</h1>
-                    <p className="py-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni assumenda vitae doloribus sunt eligendi ducimus, fugit exercitationem rem quibusdam cum odit in culpa. Dolorum, libero aliquam? Aliquid atque eius, aliquam debitis eum qui reiciendis cum id similique enim iste inventore? Expedita ut quos, optio illum ad tempore at error ex saepe maxime officia excepturi quas omnis, ipsam, voluptatum illo quasi dolores voluptas fuga? Ut nulla minus libero, a rerum quos ratione, totam nobis aliquid unde tempore dolores. Sequi, obcaecati error, ex dolore, dignissimos aspernatur delectus quaerat eum hic eius corrupti ea amet aliquam reiciendis neque voluptates facere nostrum temporibus adipisci!</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn">Explore</button>
-                    </div>
+                    <h1 class="text-5xl font-bold">Car Parts Manufacturer</h1>
+                    <p class="py-6">SpareParts.com recommends a Market Weight rating for the global auto parts
+                        and equipment manufacturing industry. While this industry provides valuable
+                        products and services to the ever-important auto industry, recent industry
+                        trends and changes in consumer preferences are likely to favor certain
+                        suppliers over others. The automobile parts and equipment industry is driven by a
+                        number of factors, the largest being global automobile
+                        production. Other important macroeconomic factors
+                        include growth in real GDP per capita, interest rates,
+                        income growth, employment growth, oil prices, and
+                        consumer confidence. </p>
+                    <Link to='allproducts'><button class="btn">Get Started</button></Link>
+                    {/* <button class="btn">Get Started</button> */}
                 </div>
             </div>
         </div>
