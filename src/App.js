@@ -12,6 +12,7 @@ import AllProducts from './pages/Home/AllProducts';
 import Myitems from './pages/DashBoard/Myitems';
 import Reviews from './pages/DashBoard/Reviews';
 import MyProfile from './pages/DashBoard/MyProfile';
+import Footer from './pages/Shared/Footer';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
       </Routes>
+      <Footer></Footer>
 
     </div>
   );
