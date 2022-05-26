@@ -19,6 +19,7 @@ import ManageAllOrders from './pages/DashBoard/ManageAllOrders';
 import AddProduct from './pages/DashBoard/AddProduct';
 import Payment from './pages/DashBoard/Payment';
 import Error from './pages/Shared/Error';
+import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/myprotfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='*' element={<Error></Error>}></Route>
       </Routes>
       <Footer></Footer>
