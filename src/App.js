@@ -13,6 +13,7 @@ import Myitems from './pages/DashBoard/Myitems';
 import Reviews from './pages/DashBoard/Reviews';
 import MyProfile from './pages/DashBoard/MyProfile';
 import Footer from './pages/Shared/Footer';
+import AllUser from './pages/DashBoard/AllUser';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route index element={<Myitems></Myitems>}></Route>
           <Route path="/dashboard/reviews" element={<Reviews></Reviews>}></Route>
           <Route path="/dashboard/myprofile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="/dashboard/allusers" element={<AllUser></AllUser>}></Route>
 
         </Route>
 

@@ -5,7 +5,7 @@ const ShowReview = ({ review }) => {
     const { email, ratings, descreption } = review;
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card w-full bg-base-100 shadow-xl">
                 <div class="card-body mx-auto">
                     <h2 class="card-title">{email}</h2>
                     <p>Ratings : {ratings}</p>

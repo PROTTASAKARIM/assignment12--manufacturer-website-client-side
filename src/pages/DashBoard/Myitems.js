@@ -6,8 +6,12 @@ import auth from '../../firebase.init';
 const Myitems = () => {
     const [orders, SetOrders] = useState([]);
     const [user] = useAuthState(auth);
-    const navigate = useNavigate()
-    console.log(user)
+    const navigate = useNavigate();
+
+    const sendToken = localStorage.getItem('accessToken')
+    console.log('user ', +sendToken)
+
+
     useEffect(() => {
         fetch(`http://localhost:5000/orders?orderEmail=${user.email}`, {
             method: 'GET'
