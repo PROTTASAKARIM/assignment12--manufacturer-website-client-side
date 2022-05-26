@@ -14,6 +14,10 @@ import Reviews from './pages/DashBoard/Reviews';
 import MyProfile from './pages/DashBoard/MyProfile';
 import Footer from './pages/Shared/Footer';
 import AllUser from './pages/DashBoard/AllUser';
+import ManageAllProducts from './pages/DashBoard/ManageAllProducts';
+import ManageAllOrders from './pages/DashBoard/ManageAllOrders';
+import AddProduct from './pages/DashBoard/AddProduct';
+import Payment from './pages/DashBoard/Payment';
 
 function App() {
   return (
@@ -30,10 +34,14 @@ function App() {
 
         <Route path='/dashboard' element={<RequireAuth><DashBoard></DashBoard></RequireAuth>}>
 
-          <Route index element={<Myitems></Myitems>}></Route>
+          <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="/dashboard/reviews" element={<Reviews></Reviews>}></Route>
-          <Route path="/dashboard/myprofile" element={<MyProfile></MyProfile>}></Route>
+          <Route path="/dashboard/myitems" element={<Myitems></Myitems>}></Route>
           <Route path="/dashboard/allusers" element={<AllUser></AllUser>}></Route>
+          <Route path="/dashboard/addProduct" element={<AddProduct></AddProduct>}></Route>
+          <Route path="/dashboard/manageallproducts" element={<ManageAllProducts></ManageAllProducts>}></Route>
+          <Route path="/dashboard/manageallorders" element={<ManageAllOrders></ManageAllOrders>}></Route>
+          <Route path="/dashboard/payment/:id" element={<Payment></Payment>}></Route>
 
         </Route>
 

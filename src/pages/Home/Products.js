@@ -29,7 +29,8 @@ const Products = () => {
                         products.slice(0, 3).map(product => <Product
                             key={product._id}
                             product={product}
-                        ></Product>)
+                        ></Product>
+                        ).reverse()
                     }
                 </div>
                 <button onClick={() => { navigateAllProducts() }} className='btn btn-ghost mt-2'>See All</button>

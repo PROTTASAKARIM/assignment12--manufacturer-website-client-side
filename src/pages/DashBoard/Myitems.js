@@ -9,7 +9,7 @@ const Myitems = () => {
     const navigate = useNavigate();
 
     const sendToken = localStorage.getItem('accessToken')
-    console.log('user ', +sendToken)
+
 
 
     useEffect(() => {
@@ -40,6 +40,7 @@ const Myitems = () => {
                             <th>Product Price</th>
                             <th>Address</th>
                             <th>Phone No</th>
+                            <th>Payment status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,13 +52,22 @@ const Myitems = () => {
                                 <td>{order.productPrice}</td>
                                 <td>{order.Address}</td>
                                 <td>{order.phonrNo}</td>
-                                {/* <td>
-                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
-                                    {(a.price && a.paid) && <div>
+                                <td>
+                                    {
+                                        (order.productPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>
+                                    }
+                                    {
+                                        (order.productPrice && order.paid) && <button className='btn btn-xs btn-success'>paid</button>
+                                    }
+
+
+                                    {/* {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+                                    {(order.price && order.paid) && <div>
                                         <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
-                                    </div>}
-                                </td> */}
+                                        <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
+                                    </div>} */}
+                                </td>
+
                             </tr>)
                         }
 
