@@ -2,7 +2,7 @@ import React from 'react';
 
 const BusinessSummary = () => {
     return (
-        <div className='m-5'>
+        <div className='m-10'>
             <h1 className='text-3xl text-primary m-5'>Business Summary</h1>
             <div className="stats stats-vertical lg:stats-horizontal shadow">
 
@@ -40,7 +40,7 @@ const BusinessSummary = () => {
 
             </div>
             <div>
-                <div class="card w-full bg-base-100 shadow-xl">
+                <div class="card w-full bg-base-100 shadow-xl mt-5">
                     <div class="card-body">
                         <h2 class="card-title">Do you have any Qustions?</h2>
                         <div class="card-actions justify-end">

@@ -1,11 +1,8 @@
-import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers';
-import { queryAllByAttribute } from '@testing-library/react';
 import React, { useEffect, useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
-import Errormsg from '../Shared/Errormsg';
 import Loading from '../Shared/Loading';
 import OrderModal from './OrderModal';
 
@@ -92,7 +89,10 @@ const ProductDetails = () => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">Name : {product[0].name}</h2>
                     <p>{product[0].shortDescription}</p>
-                    <p>Price : {product[0].price}</p>
+                    <p>Price :$ {product[0].price}</p>
+                    <p>Minimum Order Quantity : {product[0].minimumOrder}</p>
+                    <p>Available product Quantity : {product[0].availableQuantity}</p>
+                    <p>Warranty : {product[0].warranty}</p>
                     <div className="card-actions">
                         <div className="form-control">
                             <label className="input-group">

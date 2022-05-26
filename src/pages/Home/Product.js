@@ -19,6 +19,9 @@ const Product = ({ product }) => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{product.name}</h2>
                     <h4 className='font-semibold'>Price: ${product.price}<small>/per piece</small></h4>
+                    <h4 className='font-semibold'>Minimum Order Quantity: {product.minimumOrder}</h4>
+                    <h4 className='font-semibold'>Available Products: {product.availableQuantity}</h4>
+                    <p>{product.shortDescription}</p>
                     <button onClick={() => { navigateToProductDetails(_id) }} className='btn'>Buy Now</button>
                 </div>
             </div>
