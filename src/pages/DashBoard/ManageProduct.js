@@ -17,7 +17,7 @@ const ManageProduct = ({ product }) => {
 
     const deleteProduct = (id) => {
         const proceed = window.confirm('Are you sure?');
-        if (proceed && admin) {
+        if (proceed) {
             const url = `http://localhost:5000/products/${id}`;
             console.log(url)
             fetch(url, {

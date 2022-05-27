@@ -31,9 +31,9 @@ const AllUser = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map(user => <UserRow
-                                key={user._id}
-                                user={user}
+                            users.map(evevryUser => <UserRow
+                                key={evevryUser._id}
+                                evevryUser={evevryUser}
 
                             ></UserRow>)
                         }
