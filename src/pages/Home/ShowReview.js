@@ -1,5 +1,4 @@
 import React from 'react';
-import StarRatings from 'react-star-ratings/build/star-ratings';
 
 const ShowReview = ({ review }) => {
     const { email, ratings, descreption } = review;
@@ -8,9 +7,8 @@ const ShowReview = ({ review }) => {
             <div class="card w-full bg-base-100 shadow-xl">
                 <div class="card-body mx-auto">
                     <h2 class="card-title">{email}</h2>
-                    <p>Ratings : {ratings}</p>
-
-                    <p>{descreption}</p>
+                    <p>Ratings : {ratings} out of 5</p>
+                    <p>Comments : {descreption}</p>
                 </div>
             </div>
         </div >
