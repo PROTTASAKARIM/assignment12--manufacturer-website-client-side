@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Product from '../Home/Product';
+import ManageProduct from './ManageProduct';
 
 const ManageAllProducts = () => {
+    const [products, setProducts] = useState([]);
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
     return (
         <div>
-            <h1>Manage All products</h1>
+            <div>
+                <div className='my-28'>
+                    <div className='text-center'>
+                        <h3 className='text-primary  text-xl font-bold uppercase'>Our Products</h3>
+                    </div>
+                    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+                        {
+                            products.map(product => <ManageProduct
+                                key={product._id}
+                                product={product}
+                            ></ManageProduct>)
+                        }
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
