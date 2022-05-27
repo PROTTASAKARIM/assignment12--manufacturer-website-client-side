@@ -23,6 +23,7 @@ import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 import ShowReviews from './pages/Home/ShowReviews';
 import DeleteModal from './pages/DashBoard/DeleteModal';
 import ConfirmDeletePage from './pages/DashBoard/ConfirmDeletePage';
+import RequireAdmin from './pages/Login/RequireAdmin';
 
 function App() {
   return (
@@ -42,11 +43,15 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="/dashboard/reviews" element={<Reviews></Reviews>}></Route>
           <Route path="/dashboard/myitems" element={<Myitems></Myitems>}></Route>
-          {/* <Route path="/dashboard/myitems/orders/:id" element={<ConfirmDeletePage></ConfirmDeletePage>}></Route> */}
-          <Route path="/dashboard/allusers" element={<AllUser></AllUser>}></Route>
-          <Route path="/dashboard/addProduct" element={<AddProduct></AddProduct>}></Route>
-          <Route path="/dashboard/manageallproducts" element={<ManageAllProducts></ManageAllProducts>}></Route>
-          <Route path="/dashboard/manageallorders" element={<ManageAllOrders></ManageAllOrders>}></Route>
+          {/* <Route path="/dashboaRerd/myitems/orders/:id" element={<ConfirmDeletePage></ConfirmDeletePage>}></Route> */}
+          <Route path="/dashboard/allusers" element={
+            <RequireAdmin><AllUser></AllUser></RequireAdmin>
+          }></Route>
+          <Route path="/dashboard/addProduct" element={
+            <RequireAdmin><AddProduct></AddProduct></RequireAdmin>
+          }></Route>
+          <Route path="/dashboard/manageallproducts" element={<RequireAdmin><ManageAllProducts></ManageAllProducts></RequireAdmin>}></Route>
+          <Route path="/dashboard/manageallorders" element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
           <Route path="/dashboard/payment/:id" element={<Payment></Payment>}></Route>
 
         </Route>
