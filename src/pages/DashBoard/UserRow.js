@@ -1,17 +1,26 @@
 import React from 'react';
+import useAdmin from '../../hooks/useAdmin';
 
 const UserRow = ({ user }) => {
     const { email, role } = user;
     console.log(role);
-    const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
-            method: 'PUT'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
+    const [admin, adminLoading] = useAdmin(email);
 
+    const makeAdmin = () => {
+        if (admin) {
+            fetch(`http://localhost:5000/user/admin/${email}`, {
+                method: 'PUT'
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+
+                })
+        }
+        else {
+
+        }
+
     }
     return (
         <div>

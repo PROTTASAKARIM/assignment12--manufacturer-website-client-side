@@ -23,6 +23,9 @@ const MyProfile = () => {
 
             }, [user])
     }
+
+
+
     if (loading) {
         <Loading></Loading>
     }

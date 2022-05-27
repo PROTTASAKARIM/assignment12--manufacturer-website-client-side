@@ -20,6 +20,9 @@ import AddProduct from './pages/DashBoard/AddProduct';
 import Payment from './pages/DashBoard/Payment';
 import Error from './pages/Shared/Error';
 import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
+import ShowReviews from './pages/Home/ShowReviews';
+import DeleteModal from './pages/DashBoard/DeleteModal';
+import ConfirmDeletePage from './pages/DashBoard/ConfirmDeletePage';
 
 function App() {
   return (
@@ -39,6 +42,7 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="/dashboard/reviews" element={<Reviews></Reviews>}></Route>
           <Route path="/dashboard/myitems" element={<Myitems></Myitems>}></Route>
+          {/* <Route path="/dashboard/myitems/orders/:id" element={<ConfirmDeletePage></ConfirmDeletePage>}></Route> */}
           <Route path="/dashboard/allusers" element={<AllUser></AllUser>}></Route>
           <Route path="/dashboard/addProduct" element={<AddProduct></AddProduct>}></Route>
           <Route path="/dashboard/manageallproducts" element={<ManageAllProducts></ManageAllProducts>}></Route>
@@ -51,6 +55,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/review' element={<ShowReviews></ShowReviews>}></Route>
         <Route path='/myprotfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='*' element={<Error></Error>}></Route>
       </Routes>
