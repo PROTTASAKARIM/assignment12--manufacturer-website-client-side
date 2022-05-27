@@ -1,6 +1,8 @@
 import React from 'react';
+import AboutUs from './AboutUs';
 import BusinessSummary from './BusinessSummary';
 import Carousel from './Carousel';
+import OurClients from './OurClients';
 import Products from './Products';
 import ShowReviews from './ShowReviews';
 
@@ -11,6 +13,8 @@ const Home = () => {
             <Carousel></Carousel>
             <Products></Products>
             <BusinessSummary></BusinessSummary>
+            <AboutUs></AboutUs>
+            <OurClients></OurClients>
             <ShowReviews></ShowReviews>
 
         </div>

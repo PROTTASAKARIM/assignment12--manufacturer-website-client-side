@@ -74,6 +74,7 @@ const AddProduct = () => {
                                     type="text"
                                     placeholder="Product Name"
                                     className="input input-bordered w-full max-w-xs"
+                                    required
                                     {...register("productName")}
                                 />
 
@@ -87,6 +88,7 @@ const AddProduct = () => {
                                     type="number"
                                     placeholder="Product Price"
                                     className="input input-bordered w-full max-w-xs"
+                                    required
                                     {...register("productPrice")}
                                 />
 
@@ -100,6 +102,7 @@ const AddProduct = () => {
                                     type="number"
                                     placeholder="Product Quantity"
                                     className="input input-bordered w-full max-w-xs"
+                                    required
                                     {...register("productQty")}
                                 />
 
@@ -114,6 +117,7 @@ const AddProduct = () => {
                                     type="text"
                                     placeholder="Product Descreption"
                                     className="input input-bordered w-full max-w-xs"
+                                    required
                                     {...register("description")}
                                 />
                             </div>
@@ -125,6 +129,7 @@ const AddProduct = () => {
                                     type="text"
                                     placeholder="Image Link"
                                     className="input input-bordered w-full max-w-xs"
+                                    required
                                     {...register("img")}
                                 />
                             </div>
@@ -137,6 +142,7 @@ const AddProduct = () => {
                                     type="number"
                                     placeholder="Minimum Order Quantity"
                                     className="input input-bordered w-full max-w-xs"
+                                    required
                                     {...register("minimumOrder")}
                                 />
                             </div>
@@ -149,6 +155,7 @@ const AddProduct = () => {
                                     type="number"
                                     placeholder="Warranty"
                                     className="input input-bordered w-full max-w-xs"
+                                    required
                                     {...register("warranty")}
                                 />
                             </div>
