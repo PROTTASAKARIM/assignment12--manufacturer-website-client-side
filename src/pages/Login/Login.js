@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
+import useAdmin from '../../hooks/useAdmin';
 
 const Login = () => {
 
@@ -16,6 +17,7 @@ const Login = () => {
 
     const [token] = useToken(gUser || user)
 
+    const [admin, adminLoading] = useAdmin(gUser || user)
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";

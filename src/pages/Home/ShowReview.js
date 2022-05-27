@@ -9,6 +9,7 @@ const ShowReview = ({ review }) => {
                 <div class="card-body mx-auto">
                     <h2 class="card-title">{email}</h2>
                     <p>Ratings : {ratings}</p>
+
                     <p>{descreption}</p>
                 </div>
             </div>
