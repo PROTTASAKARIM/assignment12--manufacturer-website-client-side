@@ -14,7 +14,7 @@ const Payment = () => {
     const { id } = useParams();
 
 
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://stark-badlands-49587.herokuapp.com/orders/${id}`;
 
     const { data: orderdetails, isLoading } = useQuery('order', () => fetch(url).then(res => res.json()));
 

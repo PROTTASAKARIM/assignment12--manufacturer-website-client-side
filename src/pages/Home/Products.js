@@ -9,7 +9,7 @@ const Products = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://stark-badlands-49587.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

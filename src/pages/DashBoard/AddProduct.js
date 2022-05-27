@@ -22,7 +22,7 @@ const AddProduct = () => {
             email: data.email
         }
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://stark-badlands-49587.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

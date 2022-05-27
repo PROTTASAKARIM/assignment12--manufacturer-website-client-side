@@ -5,10 +5,10 @@ import UserRow from './UserRow';
 const AllUser = () => {
     const [users, setUser] = useState([]);
 
-    // const { data: users, isLoading, refetch } = useQuery(['users'], () => fetch('http://localhost:5000/user').then(res => res.json()));
+    // const { data: users, isLoading, refetch } = useQuery(['users'], () => fetch('https://stark-badlands-49587.herokuapp.com/user').then(res => res.json()));
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user`, {
+        fetch(`https://stark-badlands-49587.herokuapp.com/user`, {
             method: 'GET'
         })
             .then(res => res.json())

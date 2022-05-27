@@ -3,7 +3,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # My website details
-my website link is ()
+my website link is (https://manufacturer-website-f7716.web.app/)
+
+* Home Page is done 
+* order page is done
+* log in register done 
+* dashboard created 
+* dashboard for normal user is done 
+* dashboard for admin is done 
+* admin product add and product delete done 
 
 
 ## Available Scripts

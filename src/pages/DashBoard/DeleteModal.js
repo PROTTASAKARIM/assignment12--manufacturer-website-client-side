@@ -13,7 +13,7 @@ const DeleteModal = ({ order, deleteing, setDeleteing }) => {
         // console.log(_id)
         // setDeleteing(_id)
         // // // navigate(`orders/${_id}`);
-        // const url = `http://localhost:5000/orders/${deleteing}`
+        // const url = `https://stark-badlands-49587.herokuapp.com/orders/${deleteing}`
         // console.log(url)
 
         // fetch(url, {

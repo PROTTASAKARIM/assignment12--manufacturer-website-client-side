@@ -18,7 +18,7 @@ const Myitems = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?orderEmail=${user.email}`, {
+        fetch(`https://stark-badlands-49587.herokuapp.com/orders?orderEmail=${user.email}`, {
             method: 'GET'
         })
             .then(res => res.json())

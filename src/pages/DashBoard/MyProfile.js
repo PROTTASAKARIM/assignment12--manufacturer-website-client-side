@@ -10,7 +10,7 @@ const MyProfile = () => {
 
     const onSubmit = data => {
         console.log(data)
-        fetch(`http://localhost:5000/user`, {
+        fetch(`https://stark-badlands-49587.herokuapp.com/user`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

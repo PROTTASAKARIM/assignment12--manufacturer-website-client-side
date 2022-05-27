@@ -18,10 +18,10 @@ const ProductDetails = () => {
     let [productPrice, setProductPrice] = useState(0);
 
 
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://stark-badlands-49587.herokuapp.com/products/${id}`;
 
     // useEffect(() => {
-    //     const url = `http://localhost:5000/products/${id}`;
+    //     const url = `https://stark-badlands-49587.herokuapp.com/products/${id}`;
     //     fetch(url)
     //         .then(res => res.json())
     //         .then(data => setProductDetails(data))
